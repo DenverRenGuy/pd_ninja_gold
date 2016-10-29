@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ninja Gold  | Coding Dojo Assignment</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'main/css/site.css' %}" type="text/css">
+    </head>
+    <body>
+        <div class="wrapper">
+            <h1>Welcome to Ninja Gold!</h1>
+            <div class="status-bar">
+                <h2>Your Current Gold:</h2>
+                <h3>{{ request.session.currentGold }}</h3>
+
+            </div>
+
+            <div class="buildings">
+                <div class="building">
+                    <form id='farm' class="" action="/process_money/farm" method="post">
+                        {% csrf_token %}
+                        <h4>Farm</h4>
+                        <p>(earns 10-20 gold)<p>
+                        <input type="submit" name="submit" value="Find Gold">
+                    </form>
+                </div>
+                <div class="building">
+                    <form id='cave' class="" action="/process_money/cave" method="post">
+                        {% csrf_token %}
+                        <h4>Cave</h4>
+                        <p>(earns 5-10 gold)<p>
+                        <input type="submit" name="submit" value="Find Gold">
+                    </form>
+                </div>
+                <div class="building">
+                    <form id='house' class="" action="/process_money/house" method="post">
+                        {% csrf_token %}
+                        <h4>House</h4>
+                        <p>(earns 2-5 gold)<p>
+                        <input type="submit" name="submit" value="Find Gold">
+                    </form>
+                </div>
+                <div class="building">
+                    <form id='casino' class="" action="/process_money/casino" method="post">
+                        {% csrf_token %}
+                        <h4>Casino</h4>
+                        <p>(earns -50 to 50 gold)<p>
+                        <input type="submit" name="submit" value="Find Gold">
+                    </form>
+                </div>
+
+            <div class="logger">
+                <h3>Activity</h3>
+                <textarea name="log" rows="8" cols="40"></textarea>
+            </div>
+
+            </div>
+        </div>
+    </body>
+</html>

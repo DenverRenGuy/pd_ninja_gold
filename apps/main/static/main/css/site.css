@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+textarea{
+    width: 90%;
+    height: 8em;
+}
+
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.building{
+    display: inline-block;
+    padding: 2em;
+    text-align: center;
+    border: 2px solid black;
+    width: 15%;
+    height: 5em;
+}
+
+.logger{
+    margin-top: 2em;
+    
+}
